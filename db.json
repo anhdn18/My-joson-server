@@ -1,0 +1,122 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Pay with the world’s most popular and secure payment methods.",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "sub": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "image": "https://media.gucci.com/content/DiaryPrimaryImg_Standard_576x432/1580976011/DiaryPrimaryImg_S01-FS-GucciTennis_001_Default.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Debuting L’Obscur, the first mascara by Alessandro Michele.",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "sub": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "image": "https://media.gucci.com/content/DiaryPrimaryImg_Standard_576x432/1580399106/DiaryPrimaryImg_Messnessychic-01_001_Default.jpg"
+    },
+    {
+      "id": 3,
+      "title": "The video of the Fall Winter 2020 Women’s fashion show.",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "sub": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "image": "https://media.gucci.com/content/DiaryPrimaryImg_Standard_576x432/1579167904/DiaryPrimaryImg_S03-FS-MRTW-CELEB-02_001_Default.jpg"
+    },
+    {
+      "id": 4,
+      "title": "The guests’ lineup attending the Fall Winter 2020 Women’s show in Milan..",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "sub": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "image": "https://media.gucci.com/content/DiaryPrimaryImg_Standard_576x432/1582115405/DiaryPrimaryImg_changemakers-feb20-bizzarri_001_Default.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Ao",
+      "descs": "Nội dung tóm tắt bài viết2"
+    },
+    {
+      "id": 2,
+      "name": "Quan",
+      "descs": "Nội dung tóm tắt bài viết2"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "wqewqe",
+      "image": "https://media.gucci.com/style/White_South_0_20_316x395/1579604405/621204_ZHM35_9303_002_100_0000_Light.jpg",
+      "price": "400",
+      "price_sale": "300",
+      "cate_id": "2",
+      "status": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'"
+    },
+    {
+      "id": 2,
+      "name": "Utility Pockets asd",
+      "image": "https://media.gucci.com/style/White_South_0_40_632x790/1581093904/617270_ZAD71_1000_002_100_0000_Light.jpg",
+      "price": "400",
+      "price_sale": "300",
+      "cate_id": "2",
+      "status": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'"
+    },
+    {
+      "name": "Utility Pockets",
+      "image": "https://media.gucci.com/style/White_South_0_40_632x790/1579630506/621941_ZAD88_6203_002_100_0000_Light.jpg",
+      "price": "233",
+      "cate_id": "1",
+      "price_sale": "222",
+      "status": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'",
+      "id": 4
+    },
+    {
+      "name": "Cotton Gucci to wear",
+      "image": "https://media.gucci.com/style/White_South_0_40_632x790/1578676507/621256_ZADUU_5292_002_100_0000_Light.jpg",
+      "price": "500",
+      "cate_id": "2",
+      "price_sale": "500",
+      "status": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content heresvd'",
+      "id": 5
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Dang Ngoc Anh",
+      "email": "admin@gmail.com",
+      "mess": "ao xau"
+    },
+    {
+      "id": 2,
+      "name": "Dang Van A",
+      "email": "anhdang181@gmail.com",
+      "mess": "ao dep"
+    },
+    {
+      "name": "Dang Ngoc Anh",
+      "email": "anhdang181@gmail.com",
+      "mess": "Quan Ao Shop Dep Lam",
+      "id": 3
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "name": "ten sp",
+      "pro_id": 1
+    },
+    {
+      "id": 2,
+      "name": "ten sp",
+      "pro_id": 2
+    }
+  ],
+  "checkout": [
+    {
+      "id": 1,
+      "name": "Dang Ngoc Anh",
+      "number": 1,
+      "name_pro": "ten sp"
+    }
+  ]
+}

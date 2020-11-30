@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách San Pham</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <table class="table table-stripped">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Price sale</th>
+            <th>Cate</th>
+            <th>Status</th>
+            <th>
+                <a href="add-product.html" class="btn btn-sm btn-success">Thêm mới</a>
+            </th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    
+    <script>
+        var requestUrl = 'http://localhost:3000/products';
+        fetch(requestUrl, {
+            method: "get"
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector('tbody').innerHTML = '';
+            if(data.length > 0){
+
+                var content = ``;
+                data.forEach(element => {
+                    content += `<tr id="row-${element.id}">
+                                    <td>${element.id}</td>
+                                    <td>${element.name}</td>
+                                    <td>
+                                        <img src="${element.image}" width="100px" class="img img-avatar"/>
+                                    </td>
+                                    <td>${element.price}</td>
+                                    <td>${element.price_sale}</td>
+                                    <td>${element.cate_id}</td>
+                                    <td>${element.status}</td>
+
+                                    <td>
+                                    <a href="edit-product.html?id=${element.id}" class="btn btn-sm btn-primary">Sửa</a>  
+                                    <button class="btn btn-sm btn-danger"  onclick="removeElement(${element.id})">Xóa</button>  
+                                    </td>
+                    
+                                </tr>`;
+                });
+                document.querySelector('tbody').innerHTML = content;
+            }
+        });
+
+        function removeElement(id){
+
+            var removeNode = document.querySelector('#row-'+id);
+            removeNode.parentNode.removeChild(removeNode);
+            var removeUrl = requestUrl + "/" + id;
+            fetch(removeUrl, {
+                method: "DELETE"
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+        }
+    </script>
+</body>
+</html>

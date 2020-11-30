@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm mới San Pham</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body onload="getproductInfor()">
+    <!-- form tạo mới hotel -->
+    <div class="container">
+        <br>
+        <h2>Cập nhật thông tin San Pham</h2>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <form onsubmit="return editProduct()">
+                    <div class="form-group">
+                        <label for="">Tên San Pham</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ảnh San Pham</label>
+                        <input type="text" name="image" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Gia San Pham</label>
+                        <input type="number" name="price" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Gia Sale San Pham</label>
+                        <input type="number" name="price_sale" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Danh Muc San Pham</label>
+                        <input type="number" name="cate_id" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Chi Tiet San Pham</label>
+                        <input type="text" name="status" class="form-control">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-sm btn-primary">Lưu</button>&nbsp;
+                        <a href="index.html" class="btn btn-sm btn-danger">Hủy</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var apiUrl = 'http://localhost:3000/products';
+        var productInfo = {};
+        var id = null;
+        function getproductInfor(){
+            // 1. lấy tham số id trên đường dẫn
+            var urlParams = new URLSearchParams(window.location.search);
+            id = urlParams.get('id');
+            // 2. gửi request lên  json để lấy thông tin 
+            var getproductInfoUrl = apiUrl + "/" + id;
+            axios.get(getproductInfoUrl)
+            .then(res => {
+                if(res.statusText === "OK"){
+                    productInfo = res.data;
+                    // 3. điền dữ liệu lấy đc từ json vào trong form
+                    document.querySelector('[name="name"]').value = productInfo.name;
+                    document.querySelector('[name="image"]').value = productInfo.image;
+                    document.querySelector('[name="price"]').value = productInfo.price;
+                    document.querySelector('[name="price_sale"]').value = productInfo.price_sale;
+                    document.querySelector('[name="cate_id"]').value = productInfo.cate_id;
+                    document.querySelector('[name="status"]').value = productInfo.status;
+                }
+            })
+            
+        }
+        
+        function editProduct(){
+            var name = document.querySelector('[name="name"]').value;
+            var image = document.querySelector('[name="image"]').value;
+            var price = document.querySelector('[name="price"]').value;
+            var price_sale = document.querySelector('[name="price_sale"]').value;
+            var cate_id = document.querySelector('[name="cate_id"]').value;
+            var status = document.querySelector('[name="status"]').value;
+            productInfo.name = name;
+            productInfo.image = image;
+            productInfo.price = price;
+            productInfo.price_sale = price_sale;
+            productInfo.cate_id = cate_id;
+            productInfo.status = status;
+            // gửi request lên api để thêm 
+            var updatePrductlUrl = apiUrl + "/" + id;
+            axios.put(updatePrductlUrl, productInfo)
+            .then(data => {
+                if(data.statusText === "OK"){
+                    window.location.href = 'index.html';
+                }
+            })
+            return false;
+        }
+    </script>
+</body>
+</html>
